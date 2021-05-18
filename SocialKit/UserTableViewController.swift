@@ -17,10 +17,12 @@ class UserTableViewController: UITableViewController {
         }
     }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        print("Chegou!")
+    
+    @IBAction func onEdit(_ sender: UIBarButtonItem) {
+        tableView.setEditing(!tableView.isEditing, animated: true)
+        sender.title = tableView.isEditing ? "OK" : "Editar"
     }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -77,6 +79,14 @@ class UserTableViewController: UITableViewController {
         return UITableView.automaticDimension
     }
 
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            tableView.beginUpdates()
+            users.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+            tableView.endUpdates()
+        }
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let identifier = segue.identifier, identifier == "onUserSegue" {

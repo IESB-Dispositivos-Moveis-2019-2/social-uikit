@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LNi-hh-hwj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LNi-hh-hwj">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,23 +18,23 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="defaultCell" rowHeight="91" id="g7S-bC-Gbj" customClass="UserTableViewCell" customModule="SocialKit" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="91"/>
+                                <rect key="frame" x="0.0" y="24.5" width="414" height="91"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="g7S-bC-Gbj" id="gMC-JN-ge6">
-                                    <rect key="frame" x="0.0" y="0.0" width="383" height="91"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="384.5" height="91"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="gnI-uf-iau">
-                                            <rect key="frame" x="28" y="22.5" width="160" height="46.5"/>
+                                            <rect key="frame" x="28" y="26" width="142" height="39.5"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome da Pessoa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YE2-9A-JNa">
-                                                    <rect key="frame" x="0.0" y="0.0" width="160" height="26.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="142" height="23"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="email@dapessoa.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ET5-n1-Fd6">
-                                                    <rect key="frame" x="0.0" y="28.5" width="149.5" height="18"/>
+                                                    <rect key="frame" x="0.0" y="25" width="123" height="14.5"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -62,7 +62,13 @@
                             <outlet property="delegate" destination="9nQ-NO-3Ey" id="xmd-B6-C5J"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Usuários" id="dGu-0n-OTO"/>
+                    <navigationItem key="navigationItem" title="Usuários" id="dGu-0n-OTO">
+                        <barButtonItem key="rightBarButtonItem" title="Editar" id="7l2-lL-JUK">
+                            <connections>
+                                <action selector="onEdit:" destination="9nQ-NO-3Ey" id="Th2-tQ-XdI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mEf-jv-Trm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
